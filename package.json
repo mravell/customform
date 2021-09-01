@@ -1,0 +1,35 @@
+{
+  "name": "customforms",
+  "version": "1.0.0",
+  "description": "Custom form.io Components for Hydrogen",
+  "main": "lib/index.js",
+  "module": "module",
+  "scripts": {
+    "build": "gulp templates && gulp lib && npm run webpack:dev",
+    "browserify": "browserify ./src/index.js -o ./dist/formio-contrib.js",
+    "prepublish": "npm run build",
+    "webpack:dev": "webpack",
+    "webpack:prod": "webpack --config webpack.prod.js",
+    "webpack:use": "webpack --config webpack.use.js",
+    "webpack": "npm run webpack:prod && npm run webpack:use"
+  },
+  "files": [
+    "dist",
+    "lib"
+  ],
+  "author": "",
+  "peerDependencies": {
+    "formiojs": "^4.9.20"
+  },
+  "devDependencies": {
+    "@types/ejs": "^3.0.2",
+    "gulp": "^4.0.2",
+    "gulp-insert": "^0.5.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-template": "^5.0.0",
+    "pre-commit": "^1.2.2",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "formiojs": "^4.9.20"
+  }
+}
